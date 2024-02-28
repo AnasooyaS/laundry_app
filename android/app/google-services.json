@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "605030970234",
+    "firebase_url": "https://laundry-bbc43-default-rtdb.firebaseio.com",
+    "project_id": "laundry-bbc43",
+    "storage_bucket": "laundry-bbc43.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:605030970234:android:4e03771d9edd7e9c869cc3",
+        "android_client_info": {
+          "package_name": "com.example.laundry_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCg0SZZ_jYxC0o3tV6ysS5kpimGmoWB0N4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
