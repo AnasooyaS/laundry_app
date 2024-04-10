@@ -16,7 +16,7 @@ class _LaundryBookingPageState extends State<LaundryBookingPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Laundry Booking'),
+        title: const Text('Laundry Booking'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -24,7 +24,7 @@ class _LaundryBookingPageState extends State<LaundryBookingPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 'When would you like your clothes to be picked up?',
                 style: TextStyle(fontSize: 18),
               ),
@@ -37,14 +37,14 @@ class _LaundryBookingPageState extends State<LaundryBookingPage> {
                   });
                 },
               ),
-              SizedBox(height: 20),
-              Text(
+              const SizedBox(height: 20),
+              const Text(
                 'At what time should the rider arrive?',
                 style: TextStyle(fontSize: 18),
               ),
           
               
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               _buildDateTimePicker(
                 selectedDate: selectedPickupTime,
                 dateOnly: false,
@@ -54,7 +54,7 @@ class _LaundryBookingPageState extends State<LaundryBookingPage> {
                   });
                 },
               ),
-              SizedBox(height: 350,),
+              const SizedBox(height: 350,),
           
               Align(
                 alignment: Alignment.center,
@@ -71,7 +71,7 @@ class _LaundryBookingPageState extends State<LaundryBookingPage> {
                     backgroundColor: const Color(0xFF88AB8E),
                     shape: const BeveledRectangleBorder(),
                   ),
-                  child: Text('Continue',
+                  child: const Text('Continue',
                   style: TextStyle(color: Colors.white),),
                 ),
               ),
@@ -89,7 +89,7 @@ class _LaundryBookingPageState extends State<LaundryBookingPage> {
   }) {
     return DateTimeField(
       format: dateOnly ? DateFormat("yyyy-MM-dd") : DateFormat("hh:mm a"),
-      decoration: InputDecoration(
+      decoration: const InputDecoration(
         border: OutlineInputBorder(),
         filled: true,
         fillColor: Color(0xffE7EFE9),

@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart'as http;
+import 'package:laundry_app/src/pages/home_page.dart';
 import 'package:laundry_app/src/widgets/home_page_widget.dart';
 
 import '../../services/auth_service.dart';
@@ -48,7 +49,7 @@ class _SignupPageState extends State<SignupPage> {
     if(email.isNotEmpty && password.isNotEmpty){
       http.Response response = await AuthService.register(name, email, password, mobile, confirmPassword);
       if(response.statusCode == 200){
-        Navigator.push(context, MaterialPageRoute(builder: (context) => HomePageWidget()));
+        Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
         ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
               backgroundColor: Colors.green,

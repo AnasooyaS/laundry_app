@@ -73,6 +73,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   const PopupMenuItem(
                     value: 'option2',
                     child: Text('Profile'),
+
                   ),
                   const PopupMenuItem(
                     value: 'option3',
@@ -131,6 +132,7 @@ class _HomeScreenState extends State<HomeScreen> {
         break;
 
       case 'option2':
+        Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePageWidget()));
 
         print('Option 2 selected');
         break;

@@ -53,7 +53,10 @@ class _RegisterPageState extends State<RegisterPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Registration Page'),
+        leading: IconButton(onPressed: (){
+
+        }, icon: const Icon(Icons.arrow_back)),
+        title: const Text('Registration Page'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -63,36 +66,36 @@ class _RegisterPageState extends State<RegisterPage> {
             children: [
               TextField(
                 controller: nameController,
-                decoration: InputDecoration(labelText: 'Name'),
+                decoration: const InputDecoration(labelText: 'Name'),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               TextField(
                 controller: emailController,
-                decoration: InputDecoration(labelText: 'Email'),
+                decoration: const InputDecoration(labelText: 'Email'),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               TextField(
                 controller: phoneController,
-                decoration: InputDecoration(labelText: 'Phone Number'),
+                decoration: const InputDecoration(labelText: 'Phone Number'),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               TextField(
                 controller: passwordController,
-                decoration: InputDecoration(labelText: 'Password'),
+                decoration: const InputDecoration(labelText: 'Password'),
                 obscureText: true,
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               TextField(
                 controller: confirmPasswordController,
-                decoration: InputDecoration(labelText: 'Confirm Password'),
+                decoration: const InputDecoration(labelText: 'Confirm Password'),
                 obscureText: true,
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
                   createAccountPressed();
                 },
-                child: Text('Register'),
+                child: const Text('Register'),
               ),
             ],
           ),

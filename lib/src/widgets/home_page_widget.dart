@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../pages/slot_page.dart';
 
 class HomePageWidget extends StatefulWidget {
   const HomePageWidget({Key? key}) : super(key: key);
@@ -62,7 +63,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     text: itemTexts[index],
                     imageUrl: 'assets/img$index.png',
                     onPressed: () {
-                      //_showDialog(context);
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>LaundryBookingPage()));
                     },
                   );
                 },

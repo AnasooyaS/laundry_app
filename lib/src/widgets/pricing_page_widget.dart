@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../pages/slot_page.dart';
-//import 'package:laundry_app/src/pages/services_page.dart';
 
 class PricingPageWidget extends StatelessWidget {
   final List<String> images = [

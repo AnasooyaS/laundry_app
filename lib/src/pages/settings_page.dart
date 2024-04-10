@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:laundry_app/src/pages/phone_page.dart';
-import 'package:laundry_app/src/pages/verify_page.dart';
 import 'package:laundry_app/src/widgets/profile_page_widget.dart';
 
 
@@ -70,7 +69,7 @@ class SettingsPage extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Text(
         title,
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 18.0,
           fontWeight: FontWeight.bold,
         ),
@@ -82,7 +81,7 @@ class SettingsPage extends StatelessWidget {
     return ListTile(
       title: Text(title),
       onTap: onTap,
-      trailing: Icon(Icons.chevron_right),
+      trailing: const Icon(Icons.chevron_right),
     );
   }
 }

@@ -1,5 +1,7 @@
-
+import 'dart:io';
+import 'dart:typed_data';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 class ProfilePageWidget extends StatefulWidget {
   @override
@@ -7,21 +9,23 @@ class ProfilePageWidget extends StatefulWidget {
 }
 
 class _ProfilePageWidgetState extends State<ProfilePageWidget> {
+  Uint8List? _imageBytes;
+  final picker = ImagePicker();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Image.asset('assets/app.jpg'),
 
-            Text("Profile",
-            textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 20),),
-            SizedBox(height: 10,),
+            const Text("Profile",
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 20),),
+            const SizedBox(height: 10,),
 
             CircleAvatar(
               radius: 50,
@@ -36,64 +40,59 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
               ),
             ),
 
-            Positioned(child: IconButton(
-              onPressed:(){} ,
-              icon: const Icon(Icons.add_a_photo),
+            ElevatedButton(
+              onPressed:() => _pickImage(ImageSource.gallery),
+              child: const Text('Pick Image'),
             ),
+            if (_imageBytes != null) Image.memory(_imageBytes!),
 
-
-            ),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
             TextFormField(
               initialValue: '',
-              decoration: InputDecoration(
-                labelText: 'Name',
-
-                filled: true,
-                fillColor: Color(0xFFE7EFE9)
+              decoration: const InputDecoration(
+                  labelText: 'Name',
+                  filled: true,
+                  fillColor: Color(0xFFE7EFE9)
               ),
             ),
-            SizedBox(height: 12.0),
+            const SizedBox(height: 12.0),
             TextFormField(
               initialValue: '',
               keyboardType: TextInputType.phone,
-              decoration: InputDecoration(
-                labelText: 'Phone Number',
-
+              decoration: const InputDecoration(
+                  labelText: 'Phone Number',
                   filled: true,
                   fillColor: Color(0xFFE7EFE9)
               ),
             ),
-            SizedBox(height: 12.0),
+            const SizedBox(height: 12.0),
             TextFormField(
               initialValue: '',
               keyboardType: TextInputType.emailAddress,
-              decoration: InputDecoration(
-                labelText: 'Email',
-
+              decoration: const InputDecoration(
+                  labelText: 'Email',
                   filled: true,
                   fillColor: Color(0xFFE7EFE9)
               ),
             ),
-            SizedBox(height: 12.0),
+            const SizedBox(height: 12.0),
             TextFormField(
               initialValue: '',
-              decoration: InputDecoration(
-                labelText: 'Address',
-
+              decoration: const InputDecoration(
+                  labelText: 'Address',
                   filled: true,
                   fillColor: Color(0xFFE7EFE9)
               ),
             ),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
             ElevatedButton(
-              onPressed: () {
+                onPressed: () {
 
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF88AB8E),
-                shape: const BeveledRectangleBorder(),
-              ),
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xFF88AB8E),
+                  shape: const BeveledRectangleBorder(),
+                ),
                 child: const Text(
                   'Update Profile',
                   style: TextStyle(color: Colors.white),
@@ -103,5 +102,15 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
         ),
       ),
     );
+  }
+
+  Future<void> _pickImage(ImageSource source) async {
+    final pickedFile = await ImagePicker().pickImage(source: source);
+    if (pickedFile != null) {
+      final bytes = await pickedFile.readAsBytes();
+      setState(() {
+        _imageBytes = bytes;
+      });
+    }
   }
 }

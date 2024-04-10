@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:laundry_app/src/pages/home_page.dart';
 import 'package:laundry_app/src/pages/splash_page.dart';
 
 import 'firebase_options.dart';
@@ -27,7 +28,7 @@ class _LoginAppState extends State<LoginApp> {
       debugShowCheckedModeBanner: false,
       title: 'Login App',
       theme: ThemeData(
-        primarySwatch: Colors.blue, // Change to a valid MaterialColor swatch
+        primarySwatch: Colors.blue,
       ),
       home: SplashScreen(),
     );

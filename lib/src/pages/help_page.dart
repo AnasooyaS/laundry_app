@@ -21,7 +21,7 @@ class FAQPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text('FAQs'),
+        title: const Text('FAQs'),
       ),
       body: Column(
         children: [
@@ -30,10 +30,10 @@ class FAQPage extends StatelessWidget {
               itemCount: faqs.length,
               itemBuilder: (context, index) {
                 return ExpansionTile(
-                  title: Text(faqs[index]['question']!,style: TextStyle(color: Colors.black)),
+                  title: Text(faqs[index]['question']!,style: const TextStyle(color: Colors.black)),
                   children: <Widget>[
                     Padding(
-                      padding: EdgeInsets.all(16.0),
+                      padding: const EdgeInsets.all(16.0),
                       child: Text(faqs[index]['answer']!),
                     ),
                   ],
@@ -41,13 +41,13 @@ class FAQPage extends StatelessWidget {
               },
             ),
           ),
-          Align(
+          const Align(
             alignment: Alignment.center,
             child: Text('Contact: 123-456-7890',style: TextStyle(color: Colors.black87,
             ),),
           ),
           //  Divider(),
-          Align(
+          const Align(
             alignment: Alignment.center,
             child: Text('Email: support@example.com',style: TextStyle(color: Colors.black87))),
         ],
